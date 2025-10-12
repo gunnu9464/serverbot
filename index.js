@@ -1,4 +1,5 @@
 const mineflayer = require('mineflayer');
+const express = require('express');
 
 // 🌐 Express server to keep Render alive
 const app = express();
@@ -6,6 +7,7 @@ const PORT = process.env.PORT || 3000;
 app.get('/', (req, res) => res.send('Bot is running'));
 app.listen(PORT, () => console.log(`🌍 Web server active on port ${PORT}`));
 
+// 🔁 Bot creation with auto-reconnect
 function createBot() {
   let bot;
 
@@ -44,18 +46,17 @@ function createBot() {
 
     bot.on('end', () => {
       console.log('🔄 Disconnected. Retrying in 15 seconds...');
-      setTimeout(createBot, 15000); // Retry after 15s
+      setTimeout(createBot, 15000);
     });
 
     bot.on('error', (err) => {
       console.log('⚠️ Bot error:', err.message);
-      // Retry even if error occurs
       setTimeout(createBot, 15000);
     });
 
   } catch (e) {
     console.log('💥 Crash caught:', e.message);
-    setTimeout(createBot, 15000); // Retry even if crash
+    setTimeout(createBot, 15000);
   }
 }
 
