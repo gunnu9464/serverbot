@@ -1,0 +1,12 @@
+{
+  "name": "billi-mausi-bot",
+  "version": "1.0.0",
+  "description": "Always-online Minecraft bot for XDserverOP",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "mineflayer": "^4.5.0"
+  }
+}
