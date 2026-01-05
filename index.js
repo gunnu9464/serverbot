@@ -46,17 +46,17 @@ function createBot() {
 
     bot.on('end', () => {
       console.log('🔄 Disconnected. Retrying in 15 seconds...');
-      setTimeout(createBot, 15000);
+      setTimeout(createBot, 20000);
     });
 
     bot.on('error', (err) => {
       console.log('⚠️ Bot error:', err.message);
-      setTimeout(createBot, 15000);
+      setTimeout(createBot, 20000);
     });
 
   } catch (e) {
     console.log('💥 Crash caught:', e.message);
-    setTimeout(createBot, 15000);
+    setTimeout(createBot, 20000);
   }
 }
 
