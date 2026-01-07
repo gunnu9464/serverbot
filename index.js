@@ -15,8 +15,8 @@ function createBot() {
     bot = mineflayer.createBot({
       host: 'XDserverOP.aternos.me',
       port: 48903,
-      username: 'billi_mausi',
-      auth: '1.21.11'
+      username: 'billi_chacha',
+      auth: 'false'
     });
 
     bot.on('spawn', () => {
@@ -46,17 +46,17 @@ function createBot() {
 
     bot.on('end', () => {
       console.log('🔄 Disconnected. Retrying in 15 seconds...');
-      setTimeout(createBot, 10000);
+      setTimeout(createBot, 15000);
     });
 
     bot.on('error', (err) => {
       console.log('⚠️ Bot error:', err.message);
-      setTimeout(createBot, 10000);
+      setTimeout(createBot, 15000);
     });
 
   } catch (e) {
     console.log('💥 Crash caught:', e.message);
-    setTimeout(createBot, 10000);
+    setTimeout(createBot, 15000);
   }
 }
 
