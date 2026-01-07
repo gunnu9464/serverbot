@@ -16,7 +16,7 @@ function createBot() {
       host: 'XDserverOP.aternos.me',
       port: 48903,
       username: 'billi_mausi',
-      auth: 'offline'
+      auth: '1.21.11'
     });
 
     bot.on('spawn', () => {
